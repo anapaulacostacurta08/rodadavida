@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)https://www.amcharts.com/demos/wheel-of-life/ -->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+<script async="" src="./Roda da Vida_files/analytics.js.download"></script><script>
+	if ( screen.width >= 768 && screen.width <= 1136 ) {
+		var ratio = Math.round( screen.width / 13 ) / 100;
+		document.getElementById( "viewport" ).setAttribute( "content", "width=1300, initial-scale=" + ratio );
+	}
+</script>
+
+<title>Roda da Vida interativo</title>
+
+<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.amcharts.com/#website","url":"https://www.amcharts.com/","name":"amCharts","description":"","potentialAction":[{"@type":"SearchAction","target":"https://www.amcharts.com/?s={search_term_string}","query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"WebPage","@id":"https://www.amcharts.com/demos/wheel-of-life/#webpage","url":"https://www.amcharts.com/demos/wheel-of-life/","name":"Interactive Wheel of Life - amCharts","isPartOf":{"@id":"https://www.amcharts.com/#website"},"datePublished":"2019-10-25T07:35:00+00:00","dateModified":"2020-07-17T13:04:04+00:00","inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.amcharts.com/demos/wheel-of-life/"]}]}]}</script>
+
+<link rel="dns-prefetch" href="https://cdn.amcharts.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="amCharts » Feed" href="https://www.amcharts.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="amCharts » Comments Feed" href="https://www.amcharts.com/comments/feed/">
+<link rel="stylesheet" id="amcharts2-style-css" href="./Roda da Vida_files/main.css" type="text/css" media="all">
+<link rel="stylesheet" id="amcharts2-style-demo-css" href="./Roda da Vida_files/demo.css" type="text/css" media="all">
+<link rel="stylesheet" id="highlight-styles-css" href="./Roda da Vida_files/monokai-sublime.css" type="text/css" media="all">
+<script type="text/javascript" src="./Roda da Vida_files/core.js.download" id="-lib-4-core-js-js"></script>
+<script type="text/javascript" src="./Roda da Vida_files/charts.js.download" id="-lib-4-charts-js-js"></script>
+<script type="text/javascript" src="./Roda da Vida_files/dataviz.js.download" id="-lib-4-themes-dataviz-js-js"></script>
+<script type="text/javascript" src="./Roda da Vida_files/material.js.download" id="-lib-4-themes-material-js-js"></script>
+<script type="text/javascript" src="./Roda da Vida_files/kelly.js.download" id="-lib-4-themes-kelly-js-js"></script>
+<script type="text/javascript" src="./Roda da Vida_files/dark.js.download" id="-lib-4-themes-dark-js-js"></script>
+<script type="text/javascript" src="./Roda da Vida_files/frozen.js.download" id="-lib-4-themes-frozen-js-js"></script>
+<script type="text/javascript" src="./Roda da Vida_files/moonrisekingdom.js.download" id="-lib-4-themes-moonrisekingdom-js-js"></script>
+<script type="text/javascript" src="./Roda da Vida_files/spiritedaway.js.download" id="-lib-4-themes-spiritedaway-js-js"></script>
+<script type="text/javascript" src="./Roda da Vida_files/animated.js.download" id="-lib-4-themes-animated-js-js"></script>
+<link rel="https://api.w.org/" href="https://www.amcharts.com/wp-json/"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.amcharts.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.amcharts.com/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 5.5.3">
+<link rel="shortlink" href="https://www.amcharts.com/?p=14707">
+<link rel="alternate" type="application/json+oembed" href="https://www.amcharts.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.amcharts.com%2Fdemos%2Fwheel-of-life%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.amcharts.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.amcharts.com%2Fdemos%2Fwheel-of-life%2F&amp;format=xml">
+<meta property="og:image" content="https://www.amcharts.com/wp-content/uploads/2019/10/demo_14707_none.png"> <!--[if lt IE 9]>
+  <script type='text/javascript' src='https://www.amcharts.com/wp-content/themes/amcharts4/js/html5shiv.min.js?ver=20200717-eac'></script>
+  <script type='text/javascript' src='https://www.amcharts.com/wp-content/themes/amcharts4/js/respond.min.js?ver=20200717-eac'></script>
+  <![endif]-->
+
+<script>
+  // Indicates current version of the Privacy policy
+  var amcharts2_policy_version = 2018052201;
+  </script>
+<style>
+      #chartdiv {
+  width: 100%;
+  height: 600px;
+}
+
+.areas {
+  text-align: center;
+  margin-bottom: 15px;
+  min-height: 95px;
+}
+
+.areas .value {
+  display: inline-block;
+  font-size: 1.3em;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.areas .value:hover {
+  background: #ecc;
+}      </style>
+</head>
+<body class="demo-template-default single single-demo postid-14707 no-logo alt-bg notice-1 notice-present demo-theme-none">
+<div id="page" class="site ">
+<h3>Roda da Vida</h3>
+</header>
+<div id="content" class="site-content">
+<div id="primary" class="content-area">
+<main id="main" class="site-main" role="main">
+<div class="demo-background">
+<div class="content-demos demo-body demo-background content-col extended ">
+
+<div class="demo-code demo-code-html">
+<div class="areas">
+<div class="area">
+<h3>Saúde</h3>
+<div class="values">
+<div class="value" onclick="setValue(0, 1);">1</div>
+<div class="value" onclick="setValue(0, 2);">2</div>
+<div class="value" onclick="setValue(0, 3);">3</div>
+<div class="value" onclick="setValue(0, 4);">4</div>
+<div class="value" onclick="setValue(0, 5);">5</div>
+<div class="value" onclick="setValue(0, 6);">6</div>
+<div class="value" onclick="setValue(0, 7);">7</div>
+<div class="value" onclick="setValue(0, 8);">8</div>
+<div class="value" onclick="setValue(0, 9);">9</div>
+<div class="value" onclick="setValue(0, 10);">10</div>
+</div>
+</div>
+<div class="area" style="display: none;">
+<h3>Career</h3>
+<div class="values">
+<div class="value" onclick="setValue(1, 1);">1</div>
+<div class="value" onclick="setValue(1, 2);">2</div>
+<div class="value" onclick="setValue(1, 3);">3</div>
+<div class="value" onclick="setValue(1, 4);">4</div>
+<div class="value" onclick="setValue(1, 5);">5</div>
+<div class="value" onclick="setValue(1, 6);">6</div>
+<div class="value" onclick="setValue(1, 7);">7</div>
+<div class="value" onclick="setValue(1, 8);">8</div>
+<div class="value" onclick="setValue(1, 9);">9</div>
+<div class="value" onclick="setValue(1, 10);">10</div>
+</div>
+</div>
+<div class="area" style="display: none;">
+<h3>Love</h3>
+<div class="values">
+<div class="value" onclick="setValue(2, 1);">1</div>
+<div class="value" onclick="setValue(2, 2);">2</div>
+<div class="value" onclick="setValue(2, 3);">3</div>
+<div class="value" onclick="setValue(2, 4);">4</div>
+<div class="value" onclick="setValue(2, 5);">5</div>
+<div class="value" onclick="setValue(2, 6);">6</div>
+<div class="value" onclick="setValue(2, 7);">7</div>
+<div class="value" onclick="setValue(2, 8);">8</div>
+<div class="value" onclick="setValue(2, 9);">9</div>
+<div class="value" onclick="setValue(2, 10);">10</div>
+</div>
+</div>
+<div class="area" style="display: none;">
+<h3>Spirituality</h3>
+<div class="values">
+<div class="value" onclick="setValue(3, 1);">1</div>
+<div class="value" onclick="setValue(3, 2);">2</div>
+<div class="value" onclick="setValue(3, 3);">3</div>
+<div class="value" onclick="setValue(3, 4);">4</div>
+<div class="value" onclick="setValue(3, 5);">5</div>
+<div class="value" onclick="setValue(3, 6);">6</div>
+<div class="value" onclick="setValue(3, 7);">7</div>
+<div class="value" onclick="setValue(3, 8);">8</div>
+<div class="value" onclick="setValue(3, 9);">9</div>
+<div class="value" onclick="setValue(3, 10);">10</div>
+</div>
+</div>
+<div class="area" style="display: none;">
+<h3>Family</h3>
+<div class="values">
+<div class="value" onclick="setValue(4, 1);">1</div>
+<div class="value" onclick="setValue(4, 2);">2</div>
+<div class="value" onclick="setValue(4, 3);">3</div>
+<div class="value" onclick="setValue(4, 4);">4</div>
+<div class="value" onclick="setValue(4, 5);">5</div>
+<div class="value" onclick="setValue(4, 6);">6</div>
+<div class="value" onclick="setValue(4, 7);">7</div>
+<div class="value" onclick="setValue(4, 8);">8</div>
+<div class="value" onclick="setValue(4, 9);">9</div>
+<div class="value" onclick="setValue(4, 10);">10</div>
+</div>
+</div>
+<div class="area" style="display: none;">
+<h3>Money</h3>
+<div class="values">
+<div class="value" onclick="setValue(5, 1);">1</div>
+<div class="value" onclick="setValue(5, 2);">2</div>
+<div class="value" onclick="setValue(5, 3);">3</div>
+<div class="value" onclick="setValue(5, 4);">4</div>
+<div class="value" onclick="setValue(5, 5);">5</div>
+<div class="value" onclick="setValue(5, 6);">6</div>
+<div class="value" onclick="setValue(5, 7);">7</div>
+<div class="value" onclick="setValue(5, 8);">8</div>
+<div class="value" onclick="setValue(5, 9);">9</div>
+<div class="value" onclick="setValue(5, 10);">10</div>
+</div>
+</div>
+<div class="area" style="display: none;">
+<h3>Fun</h3>
+<div class="values">
+<div class="value" onclick="setValue(6, 1);">1</div>
+<div class="value" onclick="setValue(6, 2);">2</div>
+<div class="value" onclick="setValue(6, 3);">3</div>
+<div class="value" onclick="setValue(6, 4);">4</div>
+<div class="value" onclick="setValue(6, 5);">5</div>
+<div class="value" onclick="setValue(6, 6);">6</div>
+<div class="value" onclick="setValue(6, 7);">7</div>
+<div class="value" onclick="setValue(6, 8);">8</div>
+<div class="value" onclick="setValue(6, 9);">9</div>
+<div class="value" onclick="setValue(6, 10);">10</div>
+</div>
+</div>
+<div class="area" style="display: none;">
+<h3>Friends</h3>
+<div class="values">
+<div class="value" onclick="setValue(7, 1);">1</div>
+<div class="value" onclick="setValue(7, 2);">2</div>
+<div class="value" onclick="setValue(7, 3);">3</div>
+<div class="value" onclick="setValue(7, 4);">4</div>
+<div class="value" onclick="setValue(7, 5);">5</div>
+<div class="value" onclick="setValue(7, 6);">6</div>
+<div class="value" onclick="setValue(7, 7);">7</div>
+<div class="value" onclick="setValue(7, 8);">8</div>
+<div class="value" onclick="setValue(7, 9);">9</div>
+<div class="value" onclick="setValue(7, 10);">10</div>
+</div>
+</div>
+<div class="area" style="display: none;">
+<h3>All done!</h3>
+</div>
+</div>
+<div id="chartdiv"><div style="width: 100%; height: 100%; position: relative; left: -0.199997px; top: 0.25px;"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="group" style="width: 100%; height: 100%; overflow: visible;"><defs><clippath id="id-48"><rect width="1136" height="600"></rect></clippath><lineargradient id="gradient-id-71" x1="1%" x2="99%" y1="59%" y2="41%"><stop stop-color="#474758" offset="0"></stop><stop stop-color="#474758" stop-opacity="1" offset="0.75"></stop><stop stop-color="#3cabff" stop-opacity="1" offset="0.755"></stop></lineargradient><filter id="filter-id-80" filterUnits="objectBoundingBox" width="200%" height="200%" x="-50%" y="-50%"></filter><filter id="filter-id-101" filterUnits="objectBoundingBox" width="200%" height="200%" x="-50%" y="-50%"></filter><clippath id="id-138"><path d=" M0,-224  a224,224,0,0,1,0,448 a224,224,0,0,1,0,-448"></path></clippath><clippath id="id-170"><path d=" M0,-224  a224,224,0,0,1,0,448 a224,224,0,0,1,0,-448" r="0"></path></clippath><filter id="filter-id-53" filterUnits="objectBoundingBox" width="200%" height="200%" x="-50%" y="-50%"><fegaussianblur result="blurOut" in="SourceGraphic" stdDeviation="1.5"></fegaussianblur><feoffset result="offsetBlur" dx="1" dy="1"></feoffset><feflood flood-color="#000000" flood-opacity="0.5"></feflood><fecomposite in2="offsetBlur" operator="in"></fecomposite><femerge><femergenode></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter><filter id="filter-id-68" filterUnits="objectBoundingBox" width="120%" height="120%" x="-10%" y="-10%"><fecolormatrix type="saturate" values="0"></fecolormatrix></filter><filter id="filter-id-143" filterUnits="objectBoundingBox" width="200%" height="200%" x="-50%" y="-50%"><fegaussianblur result="blurOut" in="SourceGraphic" stdDeviation="1.5"></fegaussianblur><feoffset result="offsetBlur" dx="1" dy="1"></feoffset><feflood flood-color="#000000" flood-opacity="0.5"></feflood><fecomposite in2="offsetBlur" operator="in"></fecomposite><femerge><femergenode></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter></defs><g><g fill="#ffffff" fill-opacity="0"><rect width="1136" height="600"></rect></g><g><g role="region" clip-path="url(&quot;#id-48&quot;)" opacity="1" aria-label="Chart"><g transform="translate(20,20)"><g><g><g><g><g><g><g transform="translate(0,0)"><g fill="#ffffff" fill-opacity="0" transform="translate(0,0)"><rect width="1096" height="560"></rect></g><g><g transform="translate(548,280)"><g><g opacity="0"></g><g><g></g></g><g aria-hidden="true"><g><g><g><g><g><g stroke="#000000" stroke-opacity="0.15" fill="none"><path d=" M0,0  L0,-224 "></path></g><g stroke="#000000" stroke-opacity="0.15" fill="none"><path d=" M0,0  L158.3919,-158.3919 "></path></g><g stroke="#000000" stroke-opacity="0.15" fill="none"><path d=" M0,0  L224,0 "></path></g><g stroke="#000000" stroke-opacity="0.15" fill="none"><path d=" M0,0  L158.3919,158.3919 "></path></g><g stroke="#000000" stroke-opacity="0.15" fill="none"><path d=" M0,0  L0,224 "></path></g><g stroke="#000000" stroke-opacity="0.15" fill="none"><path d=" M0,0  L-158.3919,158.3919 "></path></g><g stroke="#000000" stroke-opacity="0.15" fill="none"><path d=" M0,0  L-224,0 "></path></g><g stroke="#000000" stroke-opacity="0.15" fill="none"><path d=" M0,0  L-158.3919,-158.3919 "></path></g><g stroke="#000000" stroke-opacity="0.15" fill="none"><path d=" M0,0  L0,-224 "></path></g></g></g><g fill="#000000" aria-label="L" fill-opacity="0" opacity="0" stroke-opacity="0" style="pointer-events: none;" transform="translate(0,248)"><g transform="translate(-4,-9)" style="user-select: none;"><text x="0" y="17.609375" dy="-4.755"><tspan>L</tspan></text></g></g><g fill="#000000" transform="translate(98.923,-229.12199999999999)"><g transform="translate(-19.5,-9)" style="user-select: none;"><text x="0" y="17.609375" dy="-4.755"><tspan>Health</tspan></text></g></g><g fill="#000000" transform="translate(239.285,-94.905)"><g transform="translate(-20,-9)" style="user-select: none;"><text x="0" y="17.609375" dy="-4.755"><tspan>Career</tspan></text></g></g><g fill="#000000" transform="translate(233.74099999999999,94.905)"><g transform="translate(-14,-9)" style="user-select: none;"><text x="0" y="17.609375" dy="-4.755"><tspan>Love</tspan></text></g></g><g fill="#000000" transform="translate(103.707,229.12199999999999)"><g transform="translate(-32,-9)" style="user-select: none;"><text x="0" y="17.609375" dy="-4.755"><tspan>Spirituality</tspan></text></g></g><g fill="#000000" transform="translate(-98.923,229.12199999999999)"><g transform="translate(-19.5,-9)" style="user-select: none;"><text x="0" y="17.609375" dy="-4.755"><tspan>Family</tspan></text></g></g><g fill="#000000" transform="translate(-240.208,94.905)"><g transform="translate(-21,-9)" style="user-select: none;"><text x="0" y="17.609375" dy="-4.755"><tspan>Money</tspan></text></g></g><g fill="#000000" transform="translate(-230.97,-94.905)"><g transform="translate(-11,-9)" style="user-select: none;"><text x="0" y="17.609375" dy="-4.755"><tspan>Fun</tspan></text></g></g><g fill="#000000" transform="translate(-99.689,-229.12199999999999)"><g transform="translate(-21.5,-9)" style="user-select: none;"><text x="0" y="17.609375" dy="-4.755"><tspan>Friends</tspan></text></g></g><g fill="#000000" display="none" transform="translate(91.461,-220.807)"><g display="none"></g></g><g><g></g></g></g></g><g fill="#000000"><g display="none"></g></g><g stroke="#000000" stroke-opacity="0.15" fill="none" display="none"><path transform="translate(-0.5,-0.5)"></path></g><g stroke="#000000" stroke-opacity="0" fill="none" style="pointer-events: none;"><path d=" M0,-224  a224,224,0,0,1,0,448 a224,224,0,0,1,0,-448" transform="translate(-0.5,-0.5)"></path></g></g></g><g><g></g></g><g aria-hidden="true"><g><g fill="#000000" transform="translate(0,-112) rotate(90)"><g display="none"></g></g><g><g><g fill="#000000" aria-label="L" fill-opacity="0" opacity="0" stroke-opacity="0" style="pointer-events: none;" display="none" transform="translate(0,-112)"><g transform="translate(-4,-9)" style="user-select: none;"><text x="0" y="17.609375" dy="-4.755"><tspan>L</tspan></text></g></g><g><g><g stroke="#000000" stroke-opacity="0.15" fill="none" display="none"><path d=" M0,0  a0,0,0,0,1,0,0 a0,0,0,0,1,0,0" transform="translate(-0.5,-0.5)"></path></g><g stroke="#000000" stroke-opacity="0.15" fill="none" display="none"><path d=" M0,0  a0,0,0,0,1,0,0 a0,0,0,0,1,0,0" transform="translate(-0.5,-0.5)"></path></g><g stroke="#000000" stroke-opacity="0.15" fill="none"><path d=" M0,0  a0,0,0,0,1,0,0 a0,0,0,0,1,0,0" transform="translate(-0.5,-0.5)"></path></g><g stroke="#000000" stroke-opacity="0.15" fill="none"><path d=" M0,-22.4  a22.4,22.4,0,0,1,0,44.8 a22.4,22.4,0,0,1,0,-44.8" transform="translate(-0.5,-0.5)"></path></g><g stroke="#000000" stroke-opacity="0.15" fill="none"><path d=" M0,-44.8  a44.8,44.8,0,0,1,0,89.6 a44.8,44.8,0,0,1,0,-89.6" transform="translate(-0.5,-0.5)"></path></g><g stroke="#000000" stroke-opacity="0.15" fill="none"><path d=" M0,-67.2  a67.2,67.2,0,0,1,0,134.4 a67.2,67.2,0,0,1,0,-134.4" transform="translate(-0.5,-0.5)"></path></g><g stroke="#000000" stroke-opacity="0.15" fill="none"><path d=" M0,-89.6  a89.6,89.6,0,0,1,0,179.2 a89.6,89.6,0,0,1,0,-179.2" transform="translate(-0.5,-0.5)"></path></g><g stroke="#000000" stroke-opacity="0.15" fill="none"><path d=" M0,-112  a112,112,0,0,1,0,224 a112,112,0,0,1,0,-224" transform="translate(-0.5,-0.5)"></path></g><g stroke="#000000" stroke-opacity="0.15" fill="none"><path d=" M0,-134.4  a134.4,134.4,0,0,1,0,268.8 a134.4,134.4,0,0,1,0,-268.8" transform="translate(-0.5,-0.5)"></path></g><g stroke="#000000" stroke-opacity="0.15" fill="none"><path d=" M0,-156.8  a156.8,156.8,0,0,1,0,313.6 a156.8,156.8,0,0,1,0,-313.6" transform="translate(-0.5,-0.5)"></path></g><g stroke="#000000" stroke-opacity="0.15" fill="none"><path d=" M0,-179.2  a179.2,179.2,0,0,1,0,358.4 a179.2,179.2,0,0,1,0,-358.4" transform="translate(-0.5,-0.5)"></path></g><g stroke="#000000" stroke-opacity="0.15" fill="none"><path d=" M0,-201.6  a201.6,201.6,0,0,1,0,403.2 a201.6,201.6,0,0,1,0,-403.2" transform="translate(-0.5,-0.5)"></path></g><g stroke="#000000" stroke-opacity="0.15" fill="none"><path d=" M0,-224  a224,224,0,0,1,0,448 a224,224,0,0,1,0,-448" transform="translate(-0.5,-0.5)"></path></g><g stroke="#000000" stroke-opacity="0.15" fill="none" display="none"><path d=" M0,-246.4  a246.4,246.4,0,0,1,0,492.8 a246.4,246.4,0,0,1,0,-492.8" transform="translate(-0.5,-0.5)"></path></g></g></g><g><g></g></g></g></g><g stroke="#000000" stroke-opacity="0.15" fill="none"><path transform="translate(-0.5,-0.5)"></path></g><g stroke="#000000" stroke-opacity="0" fill="none" style="pointer-events: none;"><path d=" M0,0  L0,-224 " transform="translate(-0.5,-0.5)"></path></g></g></g><g><g><g role="group" stroke-opacity="0" fill-opacity="1" stroke="#dc6788" aria-label="Series"><g><g clip-path="url(&quot;#id-138&quot;)"><g><g><g><g stroke-opacity="1" stroke-width="0" fill="#dc6788" fill-opacity="1" stroke="#dc6788"><g><g fill="#67b7dc"><g><g><path d=""></path></g><g></g><g></g></g></g></g></g><g stroke-opacity="1" stroke-width="0" fill="#dc6788" fill-opacity="1" stroke="#dc6788"><g><g fill="#6794dc"><g><g><path d=""></path></g><g></g><g></g></g></g></g></g><g stroke-opacity="1" stroke-width="0" fill="#dc6788" fill-opacity="1" stroke="#dc6788"><g><g fill="#6771dc"><g><g><path d=""></path></g><g></g><g></g></g></g></g></g><g stroke-opacity="1" stroke-width="0" fill="#dc6788" fill-opacity="1" stroke="#dc6788"><g><g fill="#8067dc"><g><g><path d=""></path></g><g></g><g></g></g></g></g></g><g stroke-opacity="1" stroke-width="0" fill="#dc6788" fill-opacity="1" stroke="#dc6788"><g><g fill="#a367dc"><g><g><path d=""></path></g><g></g><g></g></g></g></g></g><g stroke-opacity="1" stroke-width="0" fill="#dc6788" fill-opacity="1" stroke="#dc6788"><g><g fill="#c767dc"><g><g><path d=""></path></g><g></g><g></g></g></g></g></g><g stroke-opacity="1" stroke-width="0" fill="#dc6788" fill-opacity="1" stroke="#dc6788"><g><g fill="#dc67ce"><g><g><path d=""></path></g><g></g><g></g></g></g></g></g><g stroke-opacity="1" stroke-width="0" fill="#dc6788" fill-opacity="1" stroke="#dc6788"><g><g fill="#dc67ab"><g><g><path d=""></path></g><g></g><g></g></g></g></g></g></g></g></g></g><g></g></g></g></g></g><g clip-path="url(&quot;#id-170&quot;)"><g><g fill="#dc6788" stroke="#dc6788"><g></g></g></g></g></g></g><g><g></g></g><g role="button" focusable="true" tabindex="0" opacity="0" visibility="hidden" aria-hidden="true" transform="translate(1056,-3)" aria-labelledby="id-37-title"><g fill="#6794dc" stroke="#ffffff" fill-opacity="1" stroke-opacity="0" transform="translate(0,8)"><path d="M17,0 L18,0 a17,17 0 0 1 17,17 L35,17 a17,17 0 0 1 -17,17 L17,34 a17,17 0 0 1 -17,-17 L0,17 a17,17 0 0 1 17,-17 Z"></path></g><g transform="translate(9,9)"><g stroke="#ffffff" style="pointer-events: none;" transform="translate(0,8)"><path d=" M0,0  L11,0 " transform="translate(2.5,7.5)"></path></g><g fill="#000000" style="pointer-events: none;" transform="translate(17,8)"><g display="none"></g></g></g><title id="id-37-title">Zoom Out</title></g></g></g><g><g></g></g><g transform="translate(1096,0)"><g></g></g></g></g><g><g></g></g><g transform="translate(0,560)"><g></g></g></g></g></g></g></g></g><g><g><g role="tooltip" visibility="hidden" opacity="0"><g fill="#ffffff" fill-opacity="0.9" stroke-width="1" stroke-opacity="1" stroke="#ffffff" filter="url(&quot;#filter-id-53&quot;)" style="pointer-events: none;" transform="translate(0,6)"><path d="M3,0 L3,0 L0,-6 L13,0 L21,0 a3,3 0 0 1 3,3 L24,8 a3,3 0 0 1 -3,3 L3,11 a3,3 0 0 1 -3,-3 L0,3 a3,3 0 0 1 3,-3"></path></g><g><g fill="#ffffff" style="pointer-events: none;" transform="translate(12,6)"><g transform="translate(0,7)" display="none"></g></g></g></g><g visibility="hidden" display="none" style="pointer-events: none;"><g fill="#ffffff" opacity="1"><rect width="1136" height="600"></rect></g><g><g transform="translate(568,300)"><g><g stroke-opacity="1" fill="#f3f3f3" fill-opacity="0.8"><g><g><path d=" M53,0  a53,53,0,0,1,-106,0 a53,53,0,0,1,106,0 M42,0  a42,42,0,0,0,-84,0 a42,42,0,0,0,84,0 L42,0 "></path></g></g></g><g stroke-opacity="1" fill="#000000" fill-opacity="0.2"><g><g><path d=" M50,0  a50,50,0,0,1,-100,0 a50,50,0,0,1,100,0 M45,0  a45,45,0,0,0,-90,0 a45,45,0,0,0,90,0 L45,0 "></path></g></g></g><g fill="#000000" fill-opacity="0.4"><g transform="translate(-17,-9)" style="user-select: none;"><text x="17px" y="17.609375" dy="-4.755" text-anchor="middle"><tspan>100%</tspan></text></g></g></g></g></g></g><g opacity="0.3" aria-labelledby="id-68-title" filter="url(&quot;#filter-id-68&quot;)" style="cursor: pointer;" transform="translate(0,579)">
+
+<g role="tooltip" visibility="hidden" opacity="0"><g fill="#000000" fill-opacity="1" stroke-width="1" stroke-opacity="1" stroke="#000000" style="pointer-events: none;" transform="translate(5,-5)"><path d="M0,0 L20,0 a0,0 0 0 1 0,0 L20,10 a0,0 0 0 1 -0,0 L0,10 a0,0 0 0 1 -0,-0 L0,10 L0,10 L-5,5 L0,0 L0,0 a0,0 0 0 1 0,-0"></path></g><g><g fill="#ffffff" style="pointer-events: none;" transform="translate(15,-5)"><g transform="translate(0,5)" display="none"></g></g></g></g><g role="tooltip" visibility="hidden" opacity="0"><g fill="#ffffff" fill-opacity="0.9" stroke-width="1" stroke-opacity="1" stroke="#ffffff" filter="url(&quot;#filter-id-143&quot;)" style="pointer-events: none;" transform="translate(6,0)"><path d="M3,0 L21,0 a3,3 0 0 1 3,3 L24,8 a3,3 0 0 1 -3,3 L3,11 a3,3 0 0 1 -3,-3 L0,8 L0,8 L-6,0 L0,-2 L0,3 a3,3 0 0 1 3,-3"></path></g><g><g fill="#ffffff" style="pointer-events: none;" transform="translate(18,0)"><g transform="translate(0,7)" display="none"></g></g></g></g></g></g></g></g></svg></div></div> </div>
+<noscript><img src="https://www.amcharts.com/wp-content/uploads/2019/10/demo_14707_none.png" /></noscript>
+
+<script>
+            try {
+              // Themes begin
+// Using default theme
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+var chart = am4core.create("chartdiv", am4charts.RadarChart);
+chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+
+chart.data = [ {
+  "category": "Saúde",
+  "value": 0,
+  "color": chart.colors.next()
+}, {
+  "category": "Carreira",
+  "value": 0,
+  "color": chart.colors.next()
+}, {
+  "category": "Amor",
+  "value": 0,
+  "color": chart.colors.next()
+}, {
+  "category": "Espiritualidade",
+  "value": 0,
+  "color": chart.colors.next()
+}, {
+  "category": "Familia",
+  "value": 0,
+  "color": chart.colors.next()
+}, {
+  "category": "Dinheiro",
+  "value": 0,
+  "color": chart.colors.next()
+}, {
+  "category": "Diversão",
+  "value": 0,
+  "color": chart.colors.next()
+}, {
+  "category": "Amigos",
+  "value": 0,
+  "color": chart.colors.next()
+} ];
+
+chart.padding(20, 20, 20, 20);
+
+var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+categoryAxis.dataFields.category = "category";
+categoryAxis.renderer.labels.template.location = 0.5;
+categoryAxis.renderer.tooltipLocation = 0.5;
+
+var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+valueAxis.renderer.labels.template.disabled = true;
+valueAxis.min = 0;
+valueAxis.max = 10;
+valueAxis.renderer.minGridDistance = 10;
+
+var series = chart.series.push(new am4charts.RadarColumnSeries());
+series.columns.template.tooltipText = "{categoryX}: {valueY.value}";
+series.columns.template.width = am4core.percent(100);
+series.columns.template.strokeWidth = 0;
+series.columns.template.column.propertyFields.fill = "color";
+series.dataFields.categoryX = "category";
+series.dataFields.valueY = "value";
+
+/**
+ * Sets value for particular index
+ */
+function setValue(index, value) {
+  
+  // Set value
+  chart.data[index].value = value;
+  chart.invalidateRawData();
+  
+  // Reveal next question
+  var areas = document.getElementsByClassName("area");
+  for(var i = 0; i < areas.length; i++) {
+    areas[i].style.display = (index + 1) === i ? "block" : "none";
+  }
+  
+}            }
+            catch( e ) {
+              console.log( e );
+            }
+          </script>
+</div>
+</div>
+<div class="content-col">
+
+
+<script>
+      var demoData = {
+    "title": "Interactive Wheel of Life",
+    "description": "This is an interactive version of a classic \"Wheel of Life\" diagram, used to visualize what areas of one's life are important.\r\n\r\nThe chart uses <code>RadarChart<\/code> type from amCharts 4 package.\r\n\r\n[amb href=\"https:\/\/www.amcharts.com\/demos\/#radar\"]More demos using Radar chart[\/amb] [amb href=\"https:\/\/www.amcharts.com\/docs\/v4\/chart-types\/radar-chart\/\"]Radar chart documentation[\/amb]",
+    "javascript": "\/\/ Themes begin\r\n\/\/ Using default theme\r\nam4core.useTheme(am4themes_animated);\r\n\/\/ Themes end\r\n\r\nvar chart = am4core.create(\"chartdiv\", am4charts.RadarChart);\r\nchart.hiddenState.properties.opacity = 0; \/\/ this creates initial fade-in\r\n\r\nchart.data = [ {\r\n  \"category\": \"Health\",\r\n  \"value\": 0,\r\n  \"color\": chart.colors.next()\r\n}, {\r\n  \"category\": \"Career\",\r\n  \"value\": 0,\r\n  \"color\": chart.colors.next()\r\n}, {\r\n  \"category\": \"Love\",\r\n  \"value\": 0,\r\n  \"color\": chart.colors.next()\r\n}, {\r\n  \"category\": \"Spirituality\",\r\n  \"value\": 0,\r\n  \"color\": chart.colors.next()\r\n}, {\r\n  \"category\": \"Family\",\r\n  \"value\": 0,\r\n  \"color\": chart.colors.next()\r\n}, {\r\n  \"category\": \"Money\",\r\n  \"value\": 0,\r\n  \"color\": chart.colors.next()\r\n}, {\r\n  \"category\": \"Fun\",\r\n  \"value\": 0,\r\n  \"color\": chart.colors.next()\r\n}, {\r\n  \"category\": \"Friends\",\r\n  \"value\": 0,\r\n  \"color\": chart.colors.next()\r\n} ];\r\n\r\nchart.padding(20, 20, 20, 20);\r\n\r\nvar categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());\r\ncategoryAxis.dataFields.category = \"category\";\r\ncategoryAxis.renderer.labels.template.location = 0.5;\r\ncategoryAxis.renderer.tooltipLocation = 0.5;\r\n\r\nvar valueAxis = chart.yAxes.push(new am4charts.ValueAxis());\r\nvalueAxis.renderer.labels.template.disabled = true;\r\nvalueAxis.min = 0;\r\nvalueAxis.max = 10;\r\nvalueAxis.renderer.minGridDistance = 10;\r\n\r\nvar series = chart.series.push(new am4charts.RadarColumnSeries());\r\nseries.columns.template.tooltipText = \"{categoryX}: {valueY.value}\";\r\nseries.columns.template.width = am4core.percent(100);\r\nseries.columns.template.strokeWidth = 0;\r\nseries.columns.template.column.propertyFields.fill = \"color\";\r\nseries.dataFields.categoryX = \"category\";\r\nseries.dataFields.valueY = \"value\";\r\n\r\n\/**\r\n * Sets value for particular index\r\n *\/\r\nfunction setValue(index, value) {\r\n  \r\n  \/\/ Set value\r\n  chart.data[index].value = value;\r\n  chart.invalidateRawData();\r\n  \r\n  \/\/ Reveal next question\r\n  var areas = document.getElementsByClassName(\"area\");\r\n  for(var i = 0; i < areas.length; i++) {\r\n    areas[i].style.display = (index + 1) === i ? \"block\" : \"none\";\r\n  }\r\n  \r\n}",
+    "json": "\/\/ Themes begin\r\n\/\/ Using default theme\r\nam4core.useTheme(am4themes_animated);\r\n\/\/ Themes end\r\n\r\n",
+    "html": "<div class=\"areas\">\r\n  <div class=\"area\">\r\n    <h3>Health<\/h3>\r\n    <div class=\"values\">\r\n      <div class=\"value\" onclick=\"setValue(0, 1);\">1<\/div>\r\n      <div class=\"value\" onclick=\"setValue(0, 2);\">2<\/div>\r\n      <div class=\"value\" onclick=\"setValue(0, 3);\">3<\/div>\r\n      <div class=\"value\" onclick=\"setValue(0, 4);\">4<\/div>\r\n      <div class=\"value\" onclick=\"setValue(0, 5);\">5<\/div>\r\n      <div class=\"value\" onclick=\"setValue(0, 6);\">6<\/div>\r\n      <div class=\"value\" onclick=\"setValue(0, 7);\">7<\/div>\r\n      <div class=\"value\" onclick=\"setValue(0, 8);\">8<\/div>\r\n      <div class=\"value\" onclick=\"setValue(0, 9);\">9<\/div>\r\n      <div class=\"value\" onclick=\"setValue(0, 10);\">10<\/div>\r\n    <\/div>\r\n  <\/div>\r\n  <div class=\"area\" style=\"display: none;\">\r\n    <h3>Career<\/h3>\r\n    <div class=\"values\">\r\n      <div class=\"value\" onclick=\"setValue(1, 1);\">1<\/div>\r\n      <div class=\"value\" onclick=\"setValue(1, 2);\">2<\/div>\r\n      <div class=\"value\" onclick=\"setValue(1, 3);\">3<\/div>\r\n      <div class=\"value\" onclick=\"setValue(1, 4);\">4<\/div>\r\n      <div class=\"value\" onclick=\"setValue(1, 5);\">5<\/div>\r\n      <div class=\"value\" onclick=\"setValue(1, 6);\">6<\/div>\r\n      <div class=\"value\" onclick=\"setValue(1, 7);\">7<\/div>\r\n      <div class=\"value\" onclick=\"setValue(1, 8);\">8<\/div>\r\n      <div class=\"value\" onclick=\"setValue(1, 9);\">9<\/div>\r\n      <div class=\"value\" onclick=\"setValue(1, 10);\">10<\/div>\r\n    <\/div>\r\n  <\/div>\r\n  <div class=\"area\" style=\"display: none;\">\r\n    <h3>Love<\/h3>\r\n    <div class=\"values\">\r\n      <div class=\"value\" onclick=\"setValue(2, 1);\">1<\/div>\r\n      <div class=\"value\" onclick=\"setValue(2, 2);\">2<\/div>\r\n      <div class=\"value\" onclick=\"setValue(2, 3);\">3<\/div>\r\n      <div class=\"value\" onclick=\"setValue(2, 4);\">4<\/div>\r\n      <div class=\"value\" onclick=\"setValue(2, 5);\">5<\/div>\r\n      <div class=\"value\" onclick=\"setValue(2, 6);\">6<\/div>\r\n      <div class=\"value\" onclick=\"setValue(2, 7);\">7<\/div>\r\n      <div class=\"value\" onclick=\"setValue(2, 8);\">8<\/div>\r\n      <div class=\"value\" onclick=\"setValue(2, 9);\">9<\/div>\r\n      <div class=\"value\" onclick=\"setValue(2, 10);\">10<\/div>\r\n    <\/div>\r\n  <\/div>\r\n  <div class=\"area\" style=\"display: none;\">\r\n    <h3>Spirituality<\/h3>\r\n    <div class=\"values\">\r\n      <div class=\"value\" onclick=\"setValue(3, 1);\">1<\/div>\r\n      <div class=\"value\" onclick=\"setValue(3, 2);\">2<\/div>\r\n      <div class=\"value\" onclick=\"setValue(3, 3);\">3<\/div>\r\n      <div class=\"value\" onclick=\"setValue(3, 4);\">4<\/div>\r\n      <div class=\"value\" onclick=\"setValue(3, 5);\">5<\/div>\r\n      <div class=\"value\" onclick=\"setValue(3, 6);\">6<\/div>\r\n      <div class=\"value\" onclick=\"setValue(3, 7);\">7<\/div>\r\n      <div class=\"value\" onclick=\"setValue(3, 8);\">8<\/div>\r\n      <div class=\"value\" onclick=\"setValue(3, 9);\">9<\/div>\r\n      <div class=\"value\" onclick=\"setValue(3, 10);\">10<\/div>\r\n    <\/div>\r\n  <\/div>\r\n  <div class=\"area\" style=\"display: none;\">\r\n    <h3>Family<\/h3>\r\n    <div class=\"values\">\r\n      <div class=\"value\" onclick=\"setValue(4, 1);\">1<\/div>\r\n      <div class=\"value\" onclick=\"setValue(4, 2);\">2<\/div>\r\n      <div class=\"value\" onclick=\"setValue(4, 3);\">3<\/div>\r\n      <div class=\"value\" onclick=\"setValue(4, 4);\">4<\/div>\r\n      <div class=\"value\" onclick=\"setValue(4, 5);\">5<\/div>\r\n      <div class=\"value\" onclick=\"setValue(4, 6);\">6<\/div>\r\n      <div class=\"value\" onclick=\"setValue(4, 7);\">7<\/div>\r\n      <div class=\"value\" onclick=\"setValue(4, 8);\">8<\/div>\r\n      <div class=\"value\" onclick=\"setValue(4, 9);\">9<\/div>\r\n      <div class=\"value\" onclick=\"setValue(4, 10);\">10<\/div>\r\n    <\/div>\r\n  <\/div>\r\n  <div class=\"area\" style=\"display: none;\">\r\n    <h3>Money<\/h3>\r\n    <div class=\"values\">\r\n      <div class=\"value\" onclick=\"setValue(5, 1);\">1<\/div>\r\n      <div class=\"value\" onclick=\"setValue(5, 2);\">2<\/div>\r\n      <div class=\"value\" onclick=\"setValue(5, 3);\">3<\/div>\r\n      <div class=\"value\" onclick=\"setValue(5, 4);\">4<\/div>\r\n      <div class=\"value\" onclick=\"setValue(5, 5);\">5<\/div>\r\n      <div class=\"value\" onclick=\"setValue(5, 6);\">6<\/div>\r\n      <div class=\"value\" onclick=\"setValue(5, 7);\">7<\/div>\r\n      <div class=\"value\" onclick=\"setValue(5, 8);\">8<\/div>\r\n      <div class=\"value\" onclick=\"setValue(5, 9);\">9<\/div>\r\n      <div class=\"value\" onclick=\"setValue(5, 10);\">10<\/div>\r\n    <\/div>\r\n  <\/div>\r\n  <div class=\"area\" style=\"display: none;\">\r\n    <h3>Fun<\/h3>\r\n    <div class=\"values\">\r\n      <div class=\"value\" onclick=\"setValue(6, 1);\">1<\/div>\r\n      <div class=\"value\" onclick=\"setValue(6, 2);\">2<\/div>\r\n      <div class=\"value\" onclick=\"setValue(6, 3);\">3<\/div>\r\n      <div class=\"value\" onclick=\"setValue(6, 4);\">4<\/div>\r\n      <div class=\"value\" onclick=\"setValue(6, 5);\">5<\/div>\r\n      <div class=\"value\" onclick=\"setValue(6, 6);\">6<\/div>\r\n      <div class=\"value\" onclick=\"setValue(6, 7);\">7<\/div>\r\n      <div class=\"value\" onclick=\"setValue(6, 8);\">8<\/div>\r\n      <div class=\"value\" onclick=\"setValue(6, 9);\">9<\/div>\r\n      <div class=\"value\" onclick=\"setValue(6, 10);\">10<\/div>\r\n    <\/div>\r\n  <\/div>\r\n  <div class=\"area\" style=\"display: none;\">\r\n    <h3>Friends<\/h3>\r\n    <div class=\"values\">\r\n      <div class=\"value\" onclick=\"setValue(7, 1);\">1<\/div>\r\n      <div class=\"value\" onclick=\"setValue(7, 2);\">2<\/div>\r\n      <div class=\"value\" onclick=\"setValue(7, 3);\">3<\/div>\r\n      <div class=\"value\" onclick=\"setValue(7, 4);\">4<\/div>\r\n      <div class=\"value\" onclick=\"setValue(7, 5);\">5<\/div>\r\n      <div class=\"value\" onclick=\"setValue(7, 6);\">6<\/div>\r\n      <div class=\"value\" onclick=\"setValue(7, 7);\">7<\/div>\r\n      <div class=\"value\" onclick=\"setValue(7, 8);\">8<\/div>\r\n      <div class=\"value\" onclick=\"setValue(7, 9);\">9<\/div>\r\n      <div class=\"value\" onclick=\"setValue(7, 10);\">10<\/div>\r\n    <\/div>\r\n  <\/div>\r\n  \r\n  <div class=\"area\" style=\"display: none;\">\r\n    <h3>All done!<\/h3>\r\n  <\/div>\r\n<\/div>\r\n<div id=\"chartdiv\"><\/div>",
+    "css": "#chartdiv {\r\n  width: 100%;\r\n  height: 600px;\r\n}\r\n\r\n.areas {\r\n  text-align: center;\r\n  margin-bottom: 15px;\r\n  min-height: 95px;\r\n}\r\n\r\n.areas .value {\r\n  display: inline-block;\r\n  font-size: 1.3em;\r\n  padding: 5px 10px;\r\n  border: 1px solid #ddd;\r\n  cursor: pointer;\r\n}\r\n\r\n.areas .value:hover {\r\n  background: #ecc;\r\n}",
+    "controls": "",
+    "resources": [
+        "https:\/\/cdn.amcharts.com\/lib\/4\/core.js",
+        "https:\/\/cdn.amcharts.com\/lib\/4\/charts.js"
+    ]
+}      </script>
+</div>
+</main>
+</div>
+</div>
+</div>
+
+</div>
+<script type="text/javascript" src="./Roda da Vida_files/jquery.js.download" id="jquery-js"></script>
+<script type="text/javascript" src="./Roda da Vida_files/main.js.download" id="amcharts2-js-js"></script>
+<script type="text/javascript" src="./Roda da Vida_files/demo.js.download" id="amcharts2-js-demo-js"></script>
+<script type="text/javascript" src="./Roda da Vida_files/highlight.pack.js.download" id="highlight-js"></script>
+<script type="text/javascript" src="./Roda da Vida_files/core.min.js.download" id="jquery-ui-core-js"></script>
+<script type="text/javascript" src="./Roda da Vida_files/widget.min.js.download" id="jquery-ui-widget-js"></script>
+<script type="text/javascript" src="./Roda da Vida_files/mouse.min.js.download" id="jquery-ui-mouse-js"></script>
+<script type="text/javascript" src="./Roda da Vida_files/slider.min.js.download" id="jquery-ui-slider-js"></script>
+<script type="text/javascript" src="./Roda da Vida_files/jquery.ui.touch-punch.min.js.download" id="jquery-ui-touch-punch-js"></script>
+<script type="text/javascript" src="./Roda da Vida_files/jquery.kinetic.min.js.download" id="jquery-kinetic-js"></script>
+
+
+
+
+</body></html>
